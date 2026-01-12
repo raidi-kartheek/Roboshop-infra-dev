@@ -16,6 +16,9 @@ resource "aws_security_group_rule" "mongodb_catalogue" {
   to_port           = 27017
 }
 
+
+
+
 resource "aws_security_group_rule" "mongodb_user" {
   type              = "ingress"
   security_group_id = local.mongodb_sg_id
@@ -24,6 +27,9 @@ resource "aws_security_group_rule" "mongodb_user" {
   protocol          = "tcp"
   to_port           = 27017
 }
+
+
+
 
 # Refis accepting connections from bastion on port 22
 resource "aws_security_group_rule" "redis_bastion" {
@@ -34,6 +40,8 @@ resource "aws_security_group_rule" "redis_bastion" {
   protocol          = "tcp"
   to_port           = 22
 }
+
+
 
 resource "aws_security_group_rule" "redis_user" {
   type              = "ingress"

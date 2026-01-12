@@ -16,6 +16,8 @@ resource "aws_lb" "frontend_alb" {
   )
 }
 
+
+
 resource "aws_lb_listener" "frontend_alb" {
   load_balancer_arn = aws_lb.frontend_alb.arn
   port              = "443"
@@ -33,6 +35,8 @@ resource "aws_lb_listener" "frontend_alb" {
     }
   }
 }
+
+
 
 resource "aws_route53_record" "frontend_alb" {
   zone_id = var.zone_id
